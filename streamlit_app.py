@@ -49,6 +49,19 @@ html, body, [class*="css"] {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+/* 비번 화면 포함 전체 배경 강제 적용 */
+.stApp, .stApp > div, [data-testid="stAppViewContainer"],
+[data-testid="stAppViewBlockContainer"], .main, .main > div,
+[data-testid="block-container"] {
+    background-color: var(--bg) !important;
+}
+
+/* 흰 배경 덮어쓰기 */
+.st-emotion-cache-uf99v8, .st-emotion-cache-1y4p8pa,
+.st-emotion-cache-13ln4jf, .st-emotion-cache-z5fcl4 {
+    background-color: var(--bg) !important;
+}
+
 [data-testid="stSidebar"] {
     background-color: var(--surface) !important;
     border-right: 1px solid var(--border);
