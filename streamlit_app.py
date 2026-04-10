@@ -658,10 +658,39 @@ if run:
         st.markdown('<div class="section-title" style="margin-top:24px;">E. 선동 어휘 필터</div>', unsafe_allow_html=True)
         words = data.get("words", [])
         if words:
-            df = pd.DataFrame(words)
-            df.columns = ['자극 어휘', '심리 효과', '대체어'] if len(df.columns) == 3 else df.columns
-            df.index = [''] * len(df)
-            st.table(df)
+            rows_html = ""
+            for w in words:
+                rows_html += f"""
+                <tr>
+                    <td style="padding:10px 14px; color:#fff; font-weight:600;
+                               font-family:'IBM Plex Mono',monospace; font-size:13px;
+                               border-bottom:1px solid var(--border);">{w.get('word','')}</td>
+                    <td style="padding:10px 14px; color:#c0c8d8; font-size:13px; line-height:1.6;
+                               border-bottom:1px solid var(--border);">{w.get('effect','')}</td>
+                    <td style="padding:10px 14px; color:#22c55e; font-size:13px;
+                               font-family:'IBM Plex Mono',monospace;
+                               border-bottom:1px solid var(--border);">{w.get('alt','')}</td>
+                </tr>"""
+            st.markdown(f"""
+            <table style="width:100%; border-collapse:collapse;
+                          background:var(--surface); border-radius:8px; overflow:hidden;
+                          border:1px solid var(--border);">
+                <thead>
+                    <tr style="background:#1a1f2e;">
+                        <th style="padding:10px 14px; text-align:left; font-family:'IBM Plex Mono',monospace;
+                                   font-size:10px; letter-spacing:0.15em; color:var(--accent);
+                                   text-transform:uppercase; border-bottom:1px solid var(--border);">자극 어휘</th>
+                        <th style="padding:10px 14px; text-align:left; font-family:'IBM Plex Mono',monospace;
+                                   font-size:10px; letter-spacing:0.15em; color:var(--accent);
+                                   text-transform:uppercase; border-bottom:1px solid var(--border);">심리 효과</th>
+                        <th style="padding:10px 14px; text-align:left; font-family:'IBM Plex Mono',monospace;
+                                   font-size:10px; letter-spacing:0.15em; color:var(--accent);
+                                   text-transform:uppercase; border-bottom:1px solid var(--border);">대체어</th>
+                    </tr>
+                </thead>
+                <tbody>{rows_html}</tbody>
+            </table>
+            """, unsafe_allow_html=True)
         else:
             st.markdown('<div style="color:var(--muted); font-size:13px;">추출된 선동 어휘 없음</div>', unsafe_allow_html=True)
 
