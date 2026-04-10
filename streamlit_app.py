@@ -471,9 +471,50 @@ with col_badge:
 
 st.markdown("""
 <div style="background:var(--surface); border:1px solid var(--border); border-radius:8px;
-            padding:14px 18px; margin-bottom:24px; font-size:13px; color:#9ca3af; line-height:1.7;">
+            padding:14px 18px; margin-bottom:16px; font-size:13px; color:#9ca3af; line-height:1.7;">
 기사 본문을 입력하면 AI 미디어 심리학자가 <b style="color:#e8eaf0;">숨겨진 프레임, 인지편향, 감정 트리거, 선동 어휘</b>를
 실시간으로 해부합니다. 단순 긍/부정 감성분석이 아닌 <b style="color:#e8eaf0;">심리 조작 구조</b>를 뜯어냅니다.
+</div>
+""", unsafe_allow_html=True)
+
+# ── 분석 기능 정보 배지 ──────────────────────────────────────────────────────────
+st.markdown("""
+<div style="display:flex; flex-wrap:wrap; gap:10px; margin-bottom:20px;">
+    <div style="display:flex; align-items:center; gap:8px;
+                background:var(--surface); border:1px solid var(--border);
+                border-radius:20px; padding:6px 14px;">
+        <span style="font-size:14px;">🔬</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:11px;
+                     color:#9ca3af; letter-spacing:0.05em;">심리 트리거 5종 수치화</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px;
+                background:var(--surface); border:1px solid var(--border);
+                border-radius:20px; padding:6px 14px;">
+        <span style="font-size:14px;">🚩</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:11px;
+                     color:#9ca3af; letter-spacing:0.05em;">인지편향 최대 3종 감지</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px;
+                background:var(--surface); border:1px solid var(--border);
+                border-radius:20px; padding:6px 14px;">
+        <span style="font-size:14px;">🗣️</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:11px;
+                     color:#9ca3af; letter-spacing:0.05em;">자극 어휘 3~5개 추출</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px;
+                background:var(--surface); border:1px solid var(--border);
+                border-radius:20px; padding:6px 14px;">
+        <span style="font-size:14px;">⚖️</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:11px;
+                     color:#9ca3af; letter-spacing:0.05em;">정보 불균형 분석</span>
+    </div>
+    <div style="display:flex; align-items:center; gap:8px;
+                background:var(--surface); border:1px solid var(--border);
+                border-radius:20px; padding:6px 14px;">
+        <span style="font-size:14px;">📋</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:11px;
+                     color:#9ca3af; letter-spacing:0.05em;">데스크 총평 생성</span>
+    </div>
 </div>
 """, unsafe_allow_html=True)
 
