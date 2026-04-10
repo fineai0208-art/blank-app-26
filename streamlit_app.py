@@ -357,8 +357,7 @@ if not st.session_state.authenticated:
         st.markdown("""
         <div style="text-align:center; margin-top:20px; font-size:11px; color:#374151;
                     font-family:'IBM Plex Mono',monospace; letter-spacing:0.1em;">
-            MBC AI 저널리즘 교육과정 시연용<br>
-            CORE ALGORITHM © 2025 · PATENT PENDING
+            CORE ALGORITHM © 2026 · PATENT PENDING
         </div>
         """, unsafe_allow_html=True)
     st.stop()
