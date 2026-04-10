@@ -659,22 +659,24 @@ if run:
         words = data.get("words", [])
         if words:
             rows_html = ""
-            for w in words:
+            for i, w in enumerate(words):
+                is_last = (i == len(words) - 1)
+                border = "none" if is_last else "1px solid var(--border)"
                 rows_html += f"""
                 <tr>
                     <td style="padding:10px 14px; color:#fff; font-weight:600;
                                font-family:'IBM Plex Mono',monospace; font-size:13px;
-                               border-bottom:1px solid var(--border);">{w.get('word','')}</td>
+                               border-bottom:{border};">{w.get('word','')}</td>
                     <td style="padding:10px 14px; color:#c0c8d8; font-size:13px; line-height:1.6;
-                               border-bottom:1px solid var(--border);">{w.get('effect','')}</td>
+                               border-bottom:{border};">{w.get('effect','')}</td>
                     <td style="padding:10px 14px; color:#22c55e; font-size:13px;
                                font-family:'IBM Plex Mono',monospace;
-                               border-bottom:1px solid var(--border);">{w.get('alt','')}</td>
+                               border-bottom:{border};">{w.get('alt','')}</td>
                 </tr>"""
             st.markdown(f"""
             <table style="width:100%; border-collapse:collapse;
                           background:var(--surface); border-radius:8px; overflow:hidden;
-                          border:1px solid var(--border);">
+                          border:1px solid var(--border); margin-bottom:8px;">
                 <thead>
                     <tr style="background:#1a1f2e;">
                         <th style="padding:10px 14px; text-align:left; font-family:'IBM Plex Mono',monospace;
